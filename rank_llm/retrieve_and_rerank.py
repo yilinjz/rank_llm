@@ -48,8 +48,6 @@ def retrieve_and_rerank(
         agent = RankVicunaQ(
             model=model_path,
             context_size=context_size,
-            top_k_candidates=top_k_candidates,
-            dataset=dataset,
             prompt_mode=prompt_mode,
             device=device,
             num_gpus=num_gpus,
