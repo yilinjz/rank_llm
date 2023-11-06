@@ -5,6 +5,7 @@ from typing import List, Union, Dict, Any
 from rank_llm.rank_gpt import SafeOpenai
 from rank_llm.rankllm import PromptMode
 from rank_llm.rank_vicuna import RankVicuna
+from rank_vicuna_q import RankVicunaQ
 from rank_llm.trec_eval import EvalFunction
 from rank_llm.pyserini_retriever import RetrievalMethod
 from rank_llm.retriever import Retriever, RetrievalMode
@@ -42,6 +43,16 @@ def retrieve_and_rerank(
             context_size=context_size,
             prompt_mode=prompt_mode,
             keys=openai_keys,
+        )
+    elif "q4" or "q8" in model_path:
+        agent = RankVicunaQ(
+            model=model_path,
+            context_size=context_size,
+            top_k_candidates=top_k_candidates,
+            dataset=dataset,
+            prompt_mode=prompt_mode,
+            device=device,
+            num_gpus=num_gpus,
         )
     else:
         agent = RankVicuna(
