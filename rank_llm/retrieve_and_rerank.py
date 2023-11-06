@@ -45,6 +45,7 @@ def retrieve_and_rerank(
             keys=openai_keys,
         )
     elif "q4" or "q8" in model_path:
+        print("Reranking with quantized model.")
         agent = RankVicunaQ(
             model=model_path,
             context_size=context_size,
