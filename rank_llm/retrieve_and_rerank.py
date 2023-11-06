@@ -5,7 +5,7 @@ from typing import List, Union, Dict, Any
 from rank_llm.rank_gpt import SafeOpenai
 from rank_llm.rankllm import PromptMode
 from rank_llm.rank_vicuna import RankVicuna
-from rank_vicuna_q import RankVicunaQ
+from rank_llm.rank_vicuna_q import RankVicunaQ
 from rank_llm.trec_eval import EvalFunction
 from rank_llm.pyserini_retriever import RetrievalMethod
 from rank_llm.retriever import Retriever, RetrievalMode
