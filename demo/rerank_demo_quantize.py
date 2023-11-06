@@ -15,7 +15,7 @@ docs = ['Carson City is the capital city of the American state of Nevada.',
      ]
 
 results = retrieve_and_rerank(
-    model_path="castorini/rank_vicuna_7b_v1_q4_0",
+    model_path="/content/rank-vicuna-v1-q4_0.gguf",
     dataset=docs,
     retrieval_mode=RetrievalMode.QUERY_AND_DOCUMENTS,
     retrieval_method=RetrievalMethod.UNSPECIFIED,
